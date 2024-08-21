@@ -1,4 +1,4 @@
-package com.example.movieapp.ui
+package com.example.movieapp.ui.movielist
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
