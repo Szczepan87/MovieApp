@@ -10,7 +10,7 @@ class TmdbRepositoryImpl @Inject constructor(
     private val favoriteMovieDao: FavoriteMovieDao,
     private val tmdbApi: TmdbService
 ): TmdbRepository {
-    override suspend fun getNowPlayingMovies(): List<Movie> {
+    override suspend fun getNowPlayingMovies(page: Int): List<Movie> {
         val nowPlayingMovies = tmdbApi.getNowPlayingMovies().resultList
         return nowPlayingMovies.map {
             it.toMovie()

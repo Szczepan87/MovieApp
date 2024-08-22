@@ -7,5 +7,4 @@ data class MovieDetailsItem(
     val posterPath: String,
     val rating: Double,
     val releaseDate: String,
-    val isFavorite: Boolean,
 )

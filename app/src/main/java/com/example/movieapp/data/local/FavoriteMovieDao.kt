@@ -2,12 +2,13 @@ package com.example.movieapp.data.local
 
 import androidx.room.Dao
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoriteMovieDao {
 
     @Query("SELECT * FROM favorite_movie")
-    suspend fun getAllFavoriteMovies(): List<FavoriteMovieEntity>
+    fun getAllFavoriteMovies(): Flow<List<FavoriteMovieEntity>>
 
     @Query("SELECT * FROM favorite_movie WHERE movie_id = :movieId")
     suspend fun getFavoriteMovieById(movieId: Int): FavoriteMovieEntity?

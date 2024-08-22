@@ -14,8 +14,8 @@ class GetNowPlayingMoviesUseCase @Inject constructor(
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
     private val tmdbRepository: TmdbRepository
 ) {
-    suspend operator fun invoke(): Flow<Result<List<Movie>>> =
-        flow { emit(Result.success(tmdbRepository.getNowPlayingMovies())) }
+    suspend operator fun invoke(page: Int): Flow<Result<List<Movie>>> =
+        flow { emit(Result.success(tmdbRepository.getNowPlayingMovies(page))) }
             .flowOn(dispatcher)
             .catch { error -> emit(Result.failure(error)) }
 }

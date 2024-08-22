@@ -13,8 +13,8 @@ class RemoveMovieFromFavoritesUseCase @Inject constructor(
     @IoDispatcher private val dispatcher: CoroutineDispatcher,
     private val tmdbRepository: TmdbRepository
 ) {
-    suspend operator fun invoke(): Flow<Result<Unit>> =
-        flow { emit(Result.success(tmdbRepository.removeAllFavoriteMovies())) }
+    suspend operator fun invoke(movieId: Int): Flow<Result<Unit>> =
+        flow { emit(Result.success(tmdbRepository.removeFavoriteMovie(movieId))) }
             .flowOn(dispatcher)
             .catch { error ->
                 emit(Result.failure(error))

@@ -1,8 +1,8 @@
 [versions]
 agp = "8.5.2"
 coilCompose = "2.7.0"
-hiltAndroid = "2.44"
-kotlin = "1.9.0"
+hiltAndroid = "2.51.1"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,10 +13,11 @@ ktorClientCore = "2.3.12"
 ktorSerializationKotlinxJson = "2.3.12"
 ktorServerContentNegotiation = "2.3.12"
 lifecycleRuntimeKtx = "2.8.4"
-activityCompose = "1.8.0"
-composeBom = "2024.04.01"
+activityCompose = "1.9.1"
+composeBom = "2024.08.00"
 roomRuntime = "2.6.1"
 navigation-compose = "1.2.0"
+kotlin-compose-compiler = "2.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -49,5 +50,5 @@ compose-hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", ve
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-hilt-android = { id = "dagger.hilt.android.plugin", version = "hilt-android" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin-compose-compiler" }
 
